@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61CEE14C-708B-423F-8816-A22D5DFAB8C3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Executor</RootNamespace>
+    <AssemblyName>Executor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>ReferenciasExternas\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>ReferenciasExternas\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>ReferenciasExternas\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="encog-core-cs, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e882172b12155d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasExternas\encog-core-cs.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Global.cs" />
+    <Compile Include="Componente\ControleDesenho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componente\ControleDesenho.designer.cs">
+      <DependentUpon>ControleDesenho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\PainelDesenho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componente\PainelDesenho.designer.cs">
+      <DependentUpon>PainelDesenho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\PainelValidacao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componente\PainelValidacao.designer.cs">
+      <DependentUpon>PainelValidacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmConversor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmConversor.Designer.cs">
+      <DependentUpon>FrmConversor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Geracao\FrmGerarTreinamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Geracao\FrmGerarTreinamento.Designer.cs">
+      <DependentUpon>FrmGerarTreinamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Insercao\FormInsercaoTreinamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Insercao\FormInsercaoTreinamento.Designer.cs">
+      <DependentUpon>FormInsercaoTreinamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Insercao\FormInsercaoValidacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Insercao\FormInsercaoValidacao.designer.cs">
+      <DependentUpon>FormInsercaoValidacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Validacao\FrmValidacaoTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Validacao\FrmValidacaoTeste.Designer.cs">
+      <DependentUpon>FrmValidacaoTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmExecutorTreinamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmExecutorTreinamento.Designer.cs">
+      <DependentUpon>FrmExecutorTreinamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmResultadoTreinamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmResultadoTreinamento.Designer.cs">
+      <DependentUpon>FrmResultadoTreinamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmVisualizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmVisualizador.Designer.cs">
+      <DependentUpon>FrmVisualizador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Principal\PainelControle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Principal\PainelControle.Designer.cs">
+      <DependentUpon>PainelControle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmVisualizarDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\FrmVisualizarDados.Designer.cs">
+      <DependentUpon>FrmVisualizarDados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Visualizacao\MapaBits.cs" />
+    <Compile Include="Modelo\Algoritmo.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DadosRedeNeural.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DadosTreinamento.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DadosValidacao.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Elemento.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\LogTreinamento.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\MonografiaContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonografiaContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\MonografiaContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\MonografiaModelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonografiaModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\RedeNeuralResultante.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Treinamento.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\TreinamentoDados.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ValidacaoDados.cs">
+      <DependentUpon>MonografiaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedeNeural\RedeNeuralConfiguracao.cs" />
+    <Compile Include="RedeNeural\Treinamento.cs" />
+    <EmbeddedResource Include="Componente\ControleDesenho.resx">
+      <DependentUpon>ControleDesenho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componente\PainelDesenho.resx">
+      <DependentUpon>PainelDesenho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componente\PainelValidacao.resx">
+      <DependentUpon>PainelValidacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmConversor.resx">
+      <DependentUpon>FrmConversor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Geracao\FrmGerarTreinamento.resx">
+      <DependentUpon>FrmGerarTreinamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Insercao\FormInsercaoTreinamento.resx">
+      <DependentUpon>FormInsercaoTreinamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Insercao\FormInsercaoValidacao.resx">
+      <DependentUpon>FormInsercaoValidacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Validacao\FrmValidacaoTeste.resx">
+      <DependentUpon>FrmValidacaoTeste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Visualizacao\FrmExecutorTreinamento.resx">
+      <DependentUpon>FrmExecutorTreinamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Visualizacao\FrmResultadoTreinamento.resx">
+      <DependentUpon>FrmResultadoTreinamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Visualizacao\FrmVisualizador.resx">
+      <DependentUpon>FrmVisualizador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Principal\PainelControle.resx">
+      <DependentUpon>PainelControle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Visualizacao\FrmVisualizarDados.resx">
+      <DependentUpon>FrmVisualizarDados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Modelo\MonografiaModelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MonografiaModelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\MonografiaContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MonografiaContext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Modelo\MonografiaContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MonografiaContext.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Executor.Modelo.Algoritmo.datasource" />
+    <None Include="Properties\DataSources\Executor.Modelo.Treinamento.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Modelo\MonografiaModelo.edmx.sql" />
+    <Content Include="Querys SQL\Limpa Tabelas.sql" />
+    <Content Include="Querys SQL\SelecionaTabelas.sql" />
+    <Content Include="Querys SQL\Transfere Dados de um banco para outro.sql" />
+    <Content Include="ReferenciasExternas\AForge.dll" />
+    <Content Include="ReferenciasExternas\AForge.Imaging.dll" />
+    <Content Include="ReferenciasExternas\AForge.Math.dll" />
+    <Content Include="ReferenciasExternas\encog-core-cs.dll" />
+    <Content Include="ReferenciasExternas\encog-core-cs.pdb" />
+    <Content Include="ReferenciasExternas\encog-core-cs.xml" />
+    <Content Include="ReferenciasExternas\GoogleChartSharp.dll" />
+    <Content Include="ReferenciasExternas\GoogleChartSharp.xml" />
+    <Content Include="ReferenciasExternas\OpenFlashChart.dll" />
+    <Content Include="ReferenciasExternas\OpenFlashChart.pdb" />
+    <Content Include="ReferenciasExternas\WebChart.dll" />
+    <Content Include="ReferenciasExternas\ZedGraph.dll" />
+    <Content Include="ReferenciasExternas\ZedGraph.Web.dll" />
+    <Content Include="ReferenciasExternas\ZedGraph.Web.XML" />
+    <Content Include="ReferenciasExternas\ZedGraph.XML" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
